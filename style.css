@@ -14,9 +14,9 @@ a{color:inherit;}
 .glow-2{width:500px;height:500px;top:1200px;right:-200px;background:radial-gradient(circle,rgba(47,111,237,0.3),transparent 70%);opacity:0.35;}
 
 header{position:sticky;top:0;z-index:40;background:rgba(5,6,8,0.75);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:16px 0;}
-header .wrap{display:flex;align-items:center;justify-content:space-between;}
-.brand{font-weight:800;font-size:1.1rem;}
-nav{display:flex;gap:24px;}
+header .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;row-gap:10px;}
+.brand{font-weight:800;font-size:1.1rem;white-space:nowrap;}
+nav{display:flex;gap:24px;flex-wrap:wrap;}
 nav a{font-size:0.88rem;color:var(--mute);text-decoration:none;font-weight:600;transition:color .2s;}
 nav a:hover{color:var(--white);}
 
@@ -56,8 +56,8 @@ footer{margin-top:80px;padding:30px 0;border-top:1px solid var(--border);color:v
 
 @media (max-width:640px){
   .row, .stat-cards{grid-template-columns:1fr;}
-  nav{gap:14px;}
+  header .wrap{flex-direction:column;align-items:flex-start;}
+  nav{gap:14px 18px;width:100%;}
   nav a{font-size:0.78rem;}
   h1{font-size:1.6rem;}
 }
-
