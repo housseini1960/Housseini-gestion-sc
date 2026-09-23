@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestion Scolaire | Frameload</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<header>
+  <div class="wrap">
+    <span class="brand">🎓 Gestion Scolaire</span>
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#matieres">Matières</a>
+      <a href="#enseignants">Enseignants</a>
+      <a href="#classes">Classes</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="dashboard">
+    <div class="section-head">
+      <div class="eyebrow">Vue d'ensemble</div>
+      <h1>Tableau de bord</h1>
+    </div>
+    <div class="stat-cards">
+      <div class="glass-card stat-card"><div class="n" id="statMatieres">–</div><div class="l">Matières</div></div>
+      <div class="glass-card stat-card"><div class="n" id="statEnseignants">–</div><div class="l">Enseignants</div></div>
+      <div class="glass-card stat-card"><div class="n" id="statClasses">–</div><div class="l">Classes</div></div>
+    </div>
+  </section>
+
+  <section id="matieres">
+    <div class="section-head">
+      <div class="eyebrow">Module 1</div>
+      <h2>Gestion des matières</h2>
+    </div>
+    <div class="glass-card form-card">
+      <div class="row">
+        <div><label>Nom de la matière</label><input type="text" id="matNom" placeholder="ex: Mathématiques"></div>
+        <div><label>Code</label><input type="text" id="matCode" placeholder="ex: MATH"></div>
+      </div>
+      <button class="btn btn-primary" id="matAddBtn">Enregistrer la matière</button>
+    </div>
+    <div class="glass-card table-card">
+      <table>
+        <thead><tr><th>Nom</th><th>Code</th><th></th></tr></thead>
+        <tbody id="matieresTable"><tr><td colspan="3" class="empty">Chargement...</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="enseignants">
+    <div class="section-head">
+      <div class="eyebrow">Module 2</div>
+      <h2>Gestion des enseignants</h2>
+    </div>
+    <div class="glass-card form-card">
+      <div class="row">
+        <div><label>Nom</label><input type="text" id="ensNom" placeholder="Nom"></div>
+        <div><label>Prénom</label><input type="text" id="ensPrenom" placeholder="Prénom"></div>
+      </div>
+      <div class="row">
+        <div><label>Email</label><input type="email" id="ensEmail" placeholder="email@exemple.com"></div>
+        <div><label>Téléphone</label><input type="tel" id="ensTelephone" placeholder="Téléphone"></div>
+      </div>
+      <label>Matière</label>
+      <select id="ensMatiere"><option value="">Choisir une matière</option></select>
+      <button class="btn btn-primary" id="ensAddBtn" style="margin-top:16px;">Enregistrer l'enseignant</button>
+    </div>
+    <div class="glass-card table-card">
+      <table>
+        <thead><tr><th>Nom</th><th>Prénom</th><th>Email</th><th>Téléphone</th><th>Matière</th><th></th></tr></thead>
+        <tbody id="enseignantsTable"><tr><td colspan="6" class="empty">Chargement...</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="classes">
+    <div class="section-head">
+      <div class="eyebrow">Module 3</div>
+      <h2>Gestion des classes</h2>
+    </div>
+    <div class="glass-card form-card">
+      <div class="row">
+        <div><label>Nom de la classe</label><input type="text" id="claNom" placeholder="ex: CM2 A"></div>
+        <div><label>Niveau</label><input type="text" id="claNiveau" placeholder="ex: CM2"></div>
+      </div>
+      <label>Effectif</label>
+      <input type="number" id="claEffectif" placeholder="Nombre d'élèves" min="0">
+      <button class="btn btn-primary" id="claAddBtn" style="margin-top:16px;">Enregistrer la classe</button>
+    </div>
+    <div class="glass-card table-card">
+      <table>
+        <thead><tr><th>Nom</th><th>Niveau</th><th>Effectif</th><th></th></tr></thead>
+        <tbody id="classesTable"><tr><td colspan="4" class="empty">Chargement...</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer><div class="wrap">Plateforme de gestion scolaire — Équipe JavaScript Frameload</div></footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
+
